@@ -50,19 +50,28 @@ async def analyze_site(request: AddressRequest) -> SiteReport:
     Main endpoint: Takes an address and returns site analysis
     """
     try:
+        print(f"Analyzing address: {request.address}")
+        
         # Step 1: Geocode the address
+        print("Step 1: Geocoding...")
         lat, lng = await geocode_address(request.address)
+        print(f"Coordinates: {lat}, {lng}")
         
         # Step 2: Get elevation data
+        print("Step 2: Getting elevation...")
         elevation_data = await get_elevation_data(lat, lng)
+        print(f"Elevation data: {elevation_data}")
         
         # Step 3: Analyze terrain
+        print("Step 3: Analyzing slopes...")
         slope_analysis = analyze_slopes(elevation_data)
         
         # Step 4: Assess access
+        print("Step 4: Assessing access...")
         access_score = assess_access(lat, lng)
         
         # Step 5: Generate PDF report
+        print("Step 5: Generating PDF...")
         pdf_base64 = generate_pdf_report(
             request.address, 
             lat, 
@@ -71,6 +80,7 @@ async def analyze_site(request: AddressRequest) -> SiteReport:
             slope_analysis,
             access_score
         )
+        print("PDF generated successfully")
         
         return SiteReport(
             address=request.address,
@@ -85,8 +95,10 @@ async def analyze_site(request: AddressRequest) -> SiteReport:
         )
         
     except Exception as e:
+        print(f"ERROR: {str(e)}")
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
-
 async def geocode_address(address: str) -> tuple[float, float]:
     """Convert address to latitude/longitude using Google Geocoding API"""
     
