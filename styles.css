@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
+    padding: 40px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 1.8em;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1em;
+    color: #4a5568;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.input-section {
+    margin-bottom: 40px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#addressInput {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1em;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+#addressInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.note {
+    text-align: center;
+    margin-top: 10px;
+    color: #718096;
+    font-size: 0.9em;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.results {
+    margin-top: 40px;
+}
+
+.results h3 {
+    font-size: 1.8em;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.result-card {
+    background: #f7fafc;
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.result-card h4 {
+    font-size: 1.3em;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.elevation-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat .label {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.stat .value {
+    font-size: 1.2em;
+    color: #667eea;
+    font-weight: 700;
+}
+
+.download-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    font-size: 1.1em;
+    padding: 18px 40px;
+}
+
+.download-btn:hover {
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.4);
+}
+
+.features {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.features h3 {
+    font-size: 1.8em;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature h4 {
+    font-size: 1.2em;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #4a5568;
+}
+
+footer {
+    background: #f7fafc;
+    padding: 30px;
+    text-align: center;
+    color: #4a5568;
+}
+
+.disclaimer {
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .hero h2 {
+        font-size: 1.5em;
+    }
+}

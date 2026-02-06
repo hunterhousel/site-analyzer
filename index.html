@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Analyzer - Construction Site Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏗️ Site Analyzer</h1>
+            <p class="tagline">AI-Powered Construction Site Analysis in Seconds</p>
+        </header>
+
+        <main>
+            <div class="hero">
+                <h2>Get instant site intelligence for your next project</h2>
+                <p>Enter any address in Salt Lake City to receive a detailed analysis including elevation data, slope assessment, and buildability insights.</p>
+            </div>
+
+            <div class="input-section">
+                <form id="analyzeForm">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="addressInput" 
+                            placeholder="Enter address (e.g., 123 Main St, Salt Lake City, UT)"
+                            required
+                        >
+                        <button type="submit" id="analyzeBtn">
+                            Analyze Site
+                        </button>
+                    </div>
+                </form>
+                <p class="note">Currently serving Salt Lake City metro area</p>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing site data...</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p></p>
+            </div>
+
+            <div id="results" class="results hidden">
+                <h3>Analysis Results</h3>
+                
+                <div class="result-card">
+                    <h4>📍 Location</h4>
+                    <p id="resultAddress"></p>
+                    <p id="resultCoords"></p>
+                </div>
+
+                <div class="result-card">
+                    <h4>📊 Elevation Analysis</h4>
+                    <div class="elevation-stats">
+                        <div class="stat">
+                            <span class="label">Minimum:</span>
+                            <span id="elevMin" class="value"></span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Maximum:</span>
+                            <span id="elevMax" class="value"></span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Average:</span>
+                            <span id="elevAvg" class="value"></span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Change:</span>
+                            <span id="elevChange" class="value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h4>⛰️ Slope Analysis</h4>
+                    <p><strong>Classification:</strong> <span id="slopeClass"></span></p>
+                    <p><strong>Buildability:</strong> <span id="buildability"></span></p>
+                </div>
+
+                <div class="result-card">
+                    <h4>🚗 Access Assessment</h4>
+                    <p id="accessScore"></p>
+                </div>
+
+                <div class="download-section">
+                    <button id="downloadBtn" class="download-btn">
+                        📄 Download Full Report (PDF)
+                    </button>
+                </div>
+            </div>
+
+            <div class="features">
+                <h3>What You Get</h3>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <span class="icon">🗺️</span>
+                        <h4>Terrain Analysis</h4>
+                        <p>Detailed elevation and slope data</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">⚡</span>
+                        <h4>Instant Results</h4>
+                        <p>Get your report in under 60 seconds</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">📋</span>
+                        <h4>Professional Reports</h4>
+                        <p>Downloadable PDF documentation</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">💰</span>
+                        <h4>Save Time & Money</h4>
+                        <p>Pre-qualify sites before site visits</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built for construction professionals, developers, and investors</p>
+            <p class="disclaimer">For preliminary planning purposes only. Verify with professional site surveys.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
