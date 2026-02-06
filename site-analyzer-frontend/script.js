@@ -1,5 +1,5 @@
 // UPDATE THIS URL after you deploy the backend to Railway
-const API_URL = 'https://your-backend-url.railway.app';
+const API_URL = 'https://site-analyzer-production.up.railway.app';
 
 let currentReportPDF = null;
 
